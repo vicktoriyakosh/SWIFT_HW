@@ -45,6 +45,13 @@ class Car {
     func changeEngineState (to: EngineState) {}
     func changeDoorState (to: DoorState) {}
     func changeWindowsState (to: WindowsState) {}
+    
+    func printDetail() {
+        print ("Состояние окон: \(self.windowsState.rawValue)")
+        print ("Состояние дверей: \(self.doorState.rawValue)")
+        print ("Состояние двигателя: \(self.engineState.rawValue)")
+        print ("Пройдено км: \(self.km)")
+    }
 
 }
    
@@ -79,10 +86,8 @@ class SportCar : Car {
         override func changeWindowsState (to: WindowsState) {
             windowsState = to
         }
-    func printDetail() {
-        print ("Состояние окон: \(self.windowsState.rawValue)")
-        print ("Состояние дверей: \(self.doorState.rawValue)")
-        print ("Состояние двигателя: \(self.engineState.rawValue)")
+   override func printDetail() {
+    super.printDetail()
         print ("Крыша: \(self.roof.rawValue)")
 
      }
@@ -106,12 +111,9 @@ class TrunkCar : Car {
     override func changeWindowsState (to: WindowsState) {
         windowsState = to
     }
-    func printDetail() {
-        print ("Состояние окон: \(self.windowsState.rawValue)")
-        print ("Состояние дверей: \(self.doorState.rawValue)")
-        print ("Состояние двигателя: \(self.engineState.rawValue)")
+    override func printDetail() {
+        super.printDetail()
         print ("Багажник: \(self.trunk.rawValue)")
-        print ("Пройдено км: \(self.km)")
     }
 }
 
